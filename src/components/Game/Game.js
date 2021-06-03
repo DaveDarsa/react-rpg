@@ -52,12 +52,12 @@ const Game = ({
 		})[0];
 
 		setTimeout(() => {
-			console.log(updatedCurrentPlayer);
 			setCurrentPlayer(updatedCurrentPlayer);
 		}, 1000);
 
 		const rolledNumber = roll(1, 6);
 
+		//based on the last type of attack, change it to it's oppsite and save attack/defense amount.
 		if (turnType === "Attack") {
 			setTimeout(() => {
 				setTurnType("Defense");
@@ -71,6 +71,7 @@ const Game = ({
 
 			setDefense(rolledNumber);
 		}
+		//increment the turncount
 		setTurnCount(turnCount + 1);
 
 		//hide the button until next players turn
